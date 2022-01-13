@@ -17,7 +17,7 @@ spec:
       containers:
       - name: rogue-jndi-app
         image: quay.io/vicenteherrera/rogue-jndi
-        imagePullPolicy : always
+        imagePullPolicy : Always
         ports:
         - containerPort: 1389
 
