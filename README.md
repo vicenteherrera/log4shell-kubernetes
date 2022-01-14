@@ -2,7 +2,7 @@
 
 A log4shell proof of concept running on Kubernetes.
 
-This is not different on running other POC, it's provided to test Kubernetes specific security tools.
+This is not much different from other POCs, just automated in simple steps to test Kubernetes specific security tools.
 
 It uses the following projects:
 * https://github.com/christophetd/log4shell-vulnerable-app
