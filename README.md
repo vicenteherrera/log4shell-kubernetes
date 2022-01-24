@@ -13,14 +13,19 @@ For more information, check:
 
 ## Build and push docker images
 
-**This step is optional**. You can build your own images if you want instead of using the ones pushed to quay.io.
+**This step is optional**. You can build your own images if you want instead of using the ones available at [quay.io/vicenteherrera](https://quay.io/user/vicenteherrera).
 
 ```bash
-git clone https://github.com/veracode-research/rogue-jndi.git
+# Clone this repo, including repos rogue-jndi and log4shell-vulnerable-app as submodules
+git clone --recurse-submodules https://github.com/vicenteherrera/log4shell-kubernetes
+# Don't forget the "--recurse-submodule" part!
+cd log4shell-kubernetes
+
+# Build and push rogue-jndi
 docker build ./rogue-jndi -t quay.io/vicenteherrera/rogue-jndi -f Dockerfile-rogue-jndi
 docker push quay.io/vicenteherrera/rogue-jndi
 
-git clone https://github.com/christophetd/log4shell-vulnerable-app.git
+# Build and push log4shell-vulnerable-app
 cd log4shell-vulnerable-app
 docker build . -t quay.io/vicenteherrera/quay.io/vicenteherrera/log4shell-vulnerable-app
 docker push quay.io/vicenteherrera/log4shell-vulnerable-app

@@ -1,0 +1,6 @@
+[submodule "rogue-jndi"]
+	path = rogue-jndi
+	url = https://github.com/veracode-research/rogue-jndi.git
+[submodule "log4shell-vulnerable-app"]
+	path = log4shell-vulnerable-app
+	url = https://github.com/christophetd/log4shell-vulnerable-app.git
