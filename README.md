@@ -81,6 +81,20 @@ kubectl exec service/vulnerable-log4j -it -- ls /root
 
 It should list `test.txt` if the attack is successful.
 
+## Try everything using Okteto 
+
+With [Okteto](https://www.okteto.com/) you can have an online development cluster for free.
+
+```bash
+# Deploy on Okteto cloud cluster
+okteto pipeline deploy
+okteto kubeconfig
+# Check deployment, launch an test attack
+# [...]
+# Destroy Okteto cloud cluster
+okteto pipeline destroy
+```
+
 ## More information
 
 * My blog post at "The Vlog": [Log4j 2 vulnerabilities, part I: History](https://vicenteherrera.com/blog/log4j-part-i/)
