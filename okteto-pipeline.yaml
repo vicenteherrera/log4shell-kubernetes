@@ -1,0 +1,4 @@
+icon: https://vicenteherrera.com/blog/v.png
+deploy:
+  - kubectl apply -f https://raw.githubusercontent.com/vicenteherrera/log4shell-kubernetes/main/vulnerable-log4j.yaml
+  - kubectl apply -f https://raw.githubusercontent.com/vicenteherrera/log4shell-kubernetes/main/rogue-jndi.yaml
